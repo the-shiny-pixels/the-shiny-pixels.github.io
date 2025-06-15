@@ -8,4 +8,4 @@ I'm a graphics programmer who learned a good part of his trade by reading develo
 
 At work, I focus primarily on GPU programming and path tracing.
 
-Contact: the-s___y-pixels@gmail.com
+Contact: the.s___y.pixels@gmail.com
