@@ -36,7 +36,7 @@ Then, the second spherical sector is tangent to the sphere and its angle is give
 ![sphere-bounds-as-spherical-cone](/assets/images/conesphere-c.png){:style="display:block; margin-left:auto; margin-right:auto"}
 Then, from the law of cosines: `cos(β) = (d² - Sr² + Cr²) / (2*Cr*d)`
 
-When the Cr, Sr and d segments form a right triangle, we are sitting inbetween these 2 cases. That can be used to determine which formula we should use to compute the spherical sector.  If `d² < Sr² + Cr²`, then Formula A is used; otherwise, Formula B is used.
+When the `Cr`, `Sr` and `d` segments form a right triangle, we are sitting inbetween these 2 cases. That can be used to determine which formula we should use to compute the spherical sector.  If `d² < Sr² + Cr²`, then Formula A is used; otherwise, Formula B is used.
 
 Putting everything together, here is a first naive implementation of our IntersectSphericalConeWithSphere test in HLSL:
 {% highlight hlsl %}
