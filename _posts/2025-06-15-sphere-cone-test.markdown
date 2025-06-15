@@ -5,7 +5,7 @@ date:   2025-06-15 00:57:06 +0200
 ---
 I'm sharing here a different flavour of the cone vs. sphere intersection test that we used to improve the culling of spotlights in our Lightmapper. 
 
-To accelerate lighting evaluation, our Lightmapper uses a grid structure that subdivides the scene into cubic cells. For each cell we compute the list of lights whose bounding volume overlaps the cell's bounding box. As no trivial AABB vs. cone exists, a common strategy is to compute instead the intersection test between the cone and the cell's bounding sphere. You can find the code for that approach on Bart Wronki's blog.
+To accelerate lighting evaluation, our Lightmapper uses a grid structure that subdivides the scene into cubic cells. For each cell we compute the list of lights whose bounding volume overlaps the cell's bounding box. As no trivial AABB vs. cone exists, a common strategy is to compute instead the intersection test between the cone and the cell's bounding sphere. You can find the code for that approach on [Bart Wronki's blog](https://bartwronski.com/2017/04/13/cull-that-cone).
 
 For a spotlight it's actually possible to compute a tighter bound than a cone, considering that spotlights are usually implemented in rendering engines as point lights with an angular falloff. Effectively, the bounding shape for a spotlight is not a cone but what's called a [spherical sector](https://en.wikipedia.org/wiki/Spherical_sector) (also called spherical cone). That tighter bound formulation is particularly interesting if your spotlight has a wide angle.
 
@@ -69,7 +69,7 @@ bool IntersectSphericalConeWithSphere(
 }
 {% endhighlight %}
 
-`asin` and `acos` are quite expensive to evaluate on the GPU. We can avoid them by massaging a bit the condition:
+`asin` and `acos` are quite expensive to evaluate on the GPU (For a deeper look into their performance impact, see [this article](https://interplayoflight.wordpress.com/2025/01/19/the-hidden-cost-of-shader-instructions/) or [this one](https://seblagarde.wordpress.com/2018/09/03/siggraph-2018-the-road-toward-unified-rendering-with-unitys-high-definition-render-pipeline/)). We can avoid them by massaging a bit the condition:
 
 `α + β > γ`
 
