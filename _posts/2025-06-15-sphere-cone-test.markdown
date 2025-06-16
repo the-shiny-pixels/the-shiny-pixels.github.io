@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  "Spherical Cone vs Sphere Intersection Test"
+title:  "Spherical Cone vs Sphere Intersection Test for Spotlight Culling"
+tagline: "Tighter spotlight bounds with spherical sectors for better GPU light culling"
+description: "A deep dive into using spherical sector vs. sphere intersection tests to optimize spotlight culling in GPU-based rendering, with HLSL implementations and performance tricks."
 date:   2025-06-15 00:57:06 +0200
 ---
 I'm sharing here an HLSL implementation for a different flavour of the cone vs. sphere intersection test that we used to improve the culling of spotlights in our Lightmapper.
