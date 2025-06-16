@@ -3,7 +3,7 @@ layout: post
 title:  "Spherical Cone vs Sphere Intersection Test"
 date:   2025-06-15 00:57:06 +0200
 ---
-I'm sharing here a different flavour of the cone vs. sphere intersection test that we used to improve the culling of spotlights in our Lightmapper. 
+I'm sharing here an HLSL implementation for a different flavour of the cone vs. sphere intersection test that we used to improve the culling of spotlights in our Lightmapper.
 
 To accelerate lighting evaluation, our Lightmapper uses a grid structure that subdivides the scene into cubic cells. For each cell, we compute the list of lights whose bounding volume overlaps the cell's bounding box. As no trivial AABB vs. cone exists, a common strategy is to compute instead the intersection test between the cone and the cell's bounding sphere. You can find the code for that approach on [Bart Wronki's blog](https://bartwronski.com/2017/04/13/cull-that-cone).
 
