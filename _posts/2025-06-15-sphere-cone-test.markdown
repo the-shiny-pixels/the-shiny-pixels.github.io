@@ -45,7 +45,7 @@ We also need to consider 2 edge cases where the above formulas aren't correct:
 - The tested sphere is fully outside the cone's original sphere (when `d >= (Cr + Sr)`), then it's a trivial miss for the intersection test.
 - The tested sphere overlaps with the original sphere center (when `d < Sr`), then it's a trivial hit.
 
-To get a better feel of how the test works, you can play around with this [Desmos vizualisation](https://www.desmos.com/calculator/3j0xz8ppa4)
+To get a better feel of how the test works, you can play around with this [Desmos visualisation](https://www.desmos.com/calculator/3j0xz8ppa4)
 
 Putting now everything together, here is a first naive implementation of our `IntersectSphericalConeWithSphere` test in HLSL:
 {% highlight hlsl %}
